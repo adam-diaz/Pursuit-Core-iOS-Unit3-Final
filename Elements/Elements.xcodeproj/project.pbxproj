@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		506DDE7623ABD9AD006DE2D2 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7523ABD9AD006DE2D2 /* AppError.swift */; };
-		506DDE7823ABDBB6006DE2D2 /* Network Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7723ABDBB6006DE2D2 /* Network Helper.swift */; };
+		506DDE7823ABDBB6006DE2D2 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7723ABDBB6006DE2D2 /* NetworkHelper.swift */; };
 		506DDE7A23ABDDF2006DE2D2 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7923ABDDF2006DE2D2 /* Element.swift */; };
+		506DDE7C23ABDF74006DE2D2 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7B23ABDF74006DE2D2 /* ImageHelper.swift */; };
+		506DDE7E23ABDFEB006DE2D2 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7D23ABDFEB006DE2D2 /* ShowAlert.swift */; };
+		506DDE8023ABE4F4006DE2D2 /* ElementsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DDE7F23ABE4F4006DE2D2 /* ElementsAPI.swift */; };
 		5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734756121DA90C700FB6177 /* AppDelegate.swift */; };
 		5734756421DA90C700FB6177 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734756321DA90C700FB6177 /* ViewController.swift */; };
 		5734756721DA90C700FB6177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5734756521DA90C700FB6177 /* Main.storyboard */; };
@@ -19,8 +22,11 @@
 
 /* Begin PBXFileReference section */
 		506DDE7523ABD9AD006DE2D2 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = Elements/AppError.swift; sourceTree = SOURCE_ROOT; };
-		506DDE7723ABDBB6006DE2D2 /* Network Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Network Helper.swift"; path = "Elements/Network Helper.swift"; sourceTree = SOURCE_ROOT; };
+		506DDE7723ABDBB6006DE2D2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Elements/NetworkHelper.swift; sourceTree = SOURCE_ROOT; };
 		506DDE7923ABDDF2006DE2D2 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Elements/Element.swift; sourceTree = SOURCE_ROOT; };
+		506DDE7B23ABDF74006DE2D2 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Elements/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
+		506DDE7D23ABDFEB006DE2D2 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowAlert.swift; path = Elements/ShowAlert.swift; sourceTree = SOURCE_ROOT; };
+		506DDE7F23ABE4F4006DE2D2 /* ElementsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ElementsAPI.swift; path = Elements/ElementsAPI.swift; sourceTree = SOURCE_ROOT; };
 		5734755E21DA90C700FB6177 /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734756121DA90C700FB6177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5734756321DA90C700FB6177 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				506DDE7523ABD9AD006DE2D2 /* AppError.swift */,
-				506DDE7723ABDBB6006DE2D2 /* Network Helper.swift */,
+				506DDE7723ABDBB6006DE2D2 /* NetworkHelper.swift */,
+				506DDE7B23ABDF74006DE2D2 /* ImageHelper.swift */,
+				506DDE7D23ABDFEB006DE2D2 /* ShowAlert.swift */,
+				506DDE7F23ABE4F4006DE2D2 /* ElementsAPI.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -177,10 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5734756421DA90C700FB6177 /* ViewController.swift in Sources */,
-				506DDE7823ABDBB6006DE2D2 /* Network Helper.swift in Sources */,
+				506DDE7823ABDBB6006DE2D2 /* NetworkHelper.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,
+				506DDE8023ABE4F4006DE2D2 /* ElementsAPI.swift in Sources */,
 				506DDE7623ABD9AD006DE2D2 /* AppError.swift in Sources */,
+				506DDE7E23ABDFEB006DE2D2 /* ShowAlert.swift in Sources */,
 				506DDE7A23ABDDF2006DE2D2 /* Element.swift in Sources */,
+				506DDE7C23ABDF74006DE2D2 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
