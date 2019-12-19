@@ -10,9 +10,11 @@ import Foundation
 
 struct ElementsAPIClient {
     
-    static func fetchElements(completion: @escaping (Result<Element, AppError>) -> () ) {
+    static func fetchElements(for search: String, completion: @escaping (Result<[Element], AppError>) -> () ) {
         
-        let elementEndpointURLString = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/elements"
+        let searchQuery = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "elements"
+        
+        let elementEndpointURLString = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/\(searchQuery)"
         
         guard let url = URL(string: elementEndpointURLString) else {
             completion(.failure(.badURL(elementEndpointURLString)))
@@ -28,7 +30,7 @@ struct ElementsAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let elements = try JSONDecoder().decode(Element.self, from: data)
+                    let elements = try JSONDecoder().decode([Element].self, from: data)
                     completion(.success(elements))
                 } catch {
                     completion(.failure(.decodingError(error)))

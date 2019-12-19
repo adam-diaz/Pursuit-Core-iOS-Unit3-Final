@@ -10,6 +10,8 @@ import UIKit
 
 class ElementDetailVC: UIViewController {
     
+    var elements: Element?
+    
     override func viewDidLoad() {
         
     }
