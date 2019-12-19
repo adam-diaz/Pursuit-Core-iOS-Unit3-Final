@@ -9,13 +9,19 @@
 import UIKit
 
 class ElementCell: UITableViewCell {
-
-//    var element = Element? 
     
+    @IBOutlet weak var elementImage: UIImageView!
     
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var detailLabel: UILabel!
     
-
-
-
+    var elements: Element?
+    
+    func configuereCell(for element: Element) {
+        nameLabel.text = element.name
+        detailLabel.text = "Details should be here"
+        
+    }
+    
 }
