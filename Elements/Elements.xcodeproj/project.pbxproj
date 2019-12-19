@@ -85,6 +85,9 @@
 		5734755521DA90C700FB6177 = {
 			isa = PBXGroup;
 			children = (
+				506DDE7223ABD887006DE2D2 /* ElementsTest */,
+				506DDE7423ABD8C0006DE2D2 /* Network Services */,
+				506DDE7323ABD897006DE2D2 /* Models */,
 				5734756021DA90C700FB6177 /* Elements */,
 				5734755F21DA90C700FB6177 /* Products */,
 			);
@@ -107,9 +110,6 @@
 				506DDE8923AC0A5C006DE2D2 /* FavCell.swift */,
 				506DDE8523AC08AD006DE2D2 /* ElementDetailVC.swift */,
 				5734756521DA90C700FB6177 /* Main.storyboard */,
-				506DDE7423ABD8C0006DE2D2 /* Network Services */,
-				506DDE7323ABD897006DE2D2 /* Models */,
-				506DDE7223ABD887006DE2D2 /* ElementsTest */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,
 			);
