@@ -85,10 +85,10 @@
 		5734755521DA90C700FB6177 = {
 			isa = PBXGroup;
 			children = (
-				506DDE7223ABD887006DE2D2 /* ElementsTest */,
 				506DDE7423ABD8C0006DE2D2 /* Network Services */,
 				506DDE7323ABD897006DE2D2 /* Models */,
 				5734756021DA90C700FB6177 /* Elements */,
+				506DDE7223ABD887006DE2D2 /* ElementsTest */,
 				5734755F21DA90C700FB6177 /* Products */,
 			);
 			sourceTree = "<group>";
