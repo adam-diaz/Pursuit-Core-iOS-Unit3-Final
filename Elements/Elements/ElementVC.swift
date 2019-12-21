@@ -30,6 +30,11 @@ class ElementVC: UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadData(for: searchQuery)
+    tableview.dataSource = self
+    tableview.delegate = self
+    
+    
     
     }
 
@@ -69,12 +74,19 @@ extension ElementVC: UITableViewDataSource {
         
         let element = elements[indexPath.row]
         
-//        cell.configureCell(for: elements) 
+        cell.configureCell(for: element)
         
         return cell
     }
     
     
+}
+
+
+extension ElementVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }
 
 

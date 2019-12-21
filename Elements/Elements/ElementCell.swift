@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ElementCell: UITableViewCell {
     
     @IBOutlet weak var elementImage: UIImageView!
@@ -18,10 +19,21 @@ class ElementCell: UITableViewCell {
     
     var elements: Element?
     
-    func configuereCell(for element: Element) {
+    func configureCell(for element: Element) {
         nameLabel.text = element.name
         detailLabel.text = "Details should be here"
-        
+        elementImage.getImage(with: "http://www.theodoregray.com/periodictable/Tiles/018/s7.JPG") {  [weak self ](result) in
+            switch result {
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.elementImage.image = nil
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.elementImage.image = image
+                }
+            }
+        }
     }
     
 }
