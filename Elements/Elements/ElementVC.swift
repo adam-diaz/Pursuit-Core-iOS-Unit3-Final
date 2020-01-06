@@ -34,7 +34,7 @@ class ElementVC: UIViewController {
     loadData(for: searchQuery)
     tableview.dataSource = self
     tableview.delegate = self
-
+    searchBar.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
