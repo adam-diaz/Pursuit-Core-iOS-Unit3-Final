@@ -12,9 +12,9 @@ struct ElementsAPIClient {
     
     static func fetchElements(for search: String, completion: @escaping (Result<[Element], AppError>) -> () ) {
         
-        let searchQuery = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "elements"
+//        let searchQuery = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "elements"
         
-        let elementEndpointURLString = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/\(searchQuery)"
+        let elementEndpointURLString = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/elements"
         
         guard let url = URL(string: elementEndpointURLString) else {
             completion(.failure(.badURL(elementEndpointURLString)))
