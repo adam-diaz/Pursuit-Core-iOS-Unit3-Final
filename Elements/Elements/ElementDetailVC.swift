@@ -59,6 +59,19 @@ class ElementDetailVC: UIViewController {
    guard let elements = elements else {
        return
    }
+    let fav = Element(id: elements.id, name: elements.name, atomicMass: elements.atomicMass, boilingPoint: elements.boilingPoint, meltingPoint: elements.meltingPoint, discoveredBy: elements.discoveredBy, number: elements.number, symbol: elements.symbol)
     
+    ElementsAPIClient.postFavorites(favorite: fav) { [weak self](result) in
+        switch result {
+        case .failure:
+            DispatchQueue.main.async {
+                self?.showAlert(title: "App Error", message: "Unable to add to favorites")
+            }
+        case .success:
+            DispatchQueue.main.async {
+                self?.showAlert(title: "⭐️", message: "Added To Favorites.")
+            }
+        }
+    }
 }
 }
