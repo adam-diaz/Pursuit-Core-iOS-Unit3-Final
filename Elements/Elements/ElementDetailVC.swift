@@ -12,6 +12,11 @@ class ElementDetailVC: UIViewController {
     
     var elements: Element?
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailLabelOne: UILabel!
+    @IBOutlet weak var detailLabelTwo: UILabel!
+    
+    
     override func viewDidLoad() {
         
     }

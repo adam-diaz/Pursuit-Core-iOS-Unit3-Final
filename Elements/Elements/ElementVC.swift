@@ -11,6 +11,7 @@ import UIKit
 class ElementVC: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var tableview: UITableView!
 
     
@@ -33,9 +34,7 @@ class ElementVC: UIViewController {
     loadData(for: searchQuery)
     tableview.dataSource = self
     tableview.delegate = self
-    
-    
-    
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

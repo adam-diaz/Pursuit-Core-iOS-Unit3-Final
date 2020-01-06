@@ -10,6 +10,10 @@ import UIKit
 
 class FavElementVC: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     override func viewDidLoad() {
       super.viewDidLoad()
       

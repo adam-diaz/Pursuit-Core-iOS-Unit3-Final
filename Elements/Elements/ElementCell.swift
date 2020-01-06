@@ -21,7 +21,7 @@ class ElementCell: UITableViewCell {
     
     func configureCell(for element: Element) {
         nameLabel.text = element.name
-        detailLabel.text = "Details should be here"
+        detailLabel.text = " \(element.symbol)(\(element.number)) \(element.atomicMass)"
         elementImage.getImage(with: "http://www.theodoregray.com/periodictable/Tiles/018/s7.JPG") {  [weak self ](result) in
             switch result {
             case .failure:
