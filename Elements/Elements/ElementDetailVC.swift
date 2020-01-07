@@ -65,11 +65,11 @@ class ElementDetailVC: UIViewController {
         switch result {
         case .failure:
             DispatchQueue.main.async {
-                self?.showAlert(title: "App Error", message: "Unable to add to favorites")
+                self?.showAlert(title: "App Error", message: "Unable to add to favorites.")
             }
         case .success:
             DispatchQueue.main.async {
-                self?.showAlert(title: "⭐️", message: "Added To Favorites.")
+                self?.showAlert(title: "Favorited", message: "Added To Favorites.")
             }
         }
     }

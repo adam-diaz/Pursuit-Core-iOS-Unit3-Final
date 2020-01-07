@@ -12,13 +12,13 @@ class ElementVC: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var tableView: UITableView!
 
     
     private var elements = [Element]() {
         didSet {
             DispatchQueue.main.async {
-                self.tableview.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
@@ -32,13 +32,13 @@ class ElementVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     loadData(for: searchQuery)
-    tableview.dataSource = self
-    tableview.delegate = self
+    tableView.dataSource = self
+    tableView.delegate = self
     searchBar.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let elementDetail = segue.destination as? ElementDetailVC, let indexPath = tableview.indexPathForSelectedRow else {
+        guard let elementDetail = segue.destination as? ElementDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("Could Not Segue")
         }
         elementDetail.elements = elements[indexPath.row]

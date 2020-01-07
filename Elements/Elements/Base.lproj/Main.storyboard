@@ -90,7 +90,7 @@
                     <navigationItem key="navigationItem" id="MBD-yJ-snZ"/>
                     <connections>
                         <outlet property="searchBar" destination="6Sg-WW-s0X" id="f9V-v1-Kse"/>
-                        <outlet property="tableview" destination="pST-zc-pBC" id="qZN-W7-QOh"/>
+                        <outlet property="tableView" destination="pST-zc-pBC" id="qZN-W7-QOh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -148,9 +148,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="detailLabel" destination="Qyx-87-140" id="Ylg-5q-IZZ"/>
-                                            <outlet property="elementImage" destination="jiB-sC-qFY" id="zuQ-4h-acj"/>
-                                            <outlet property="nameLabel" destination="e6C-xQ-nS2" id="DAQ-oK-T1l"/>
+                                            <outlet property="detailLabel" destination="Qyx-87-140" id="cqa-mn-XVT"/>
+                                            <outlet property="elementImage" destination="jiB-sC-qFY" id="NEt-tf-7gB"/>
+                                            <outlet property="nameLabel" destination="e6C-xQ-nS2" id="KlC-xi-XXC"/>
                                             <segue destination="82i-sf-OjW" kind="show" id="Ea9-t1-Ho7"/>
                                         </connections>
                                     </tableViewCell>
@@ -176,7 +176,7 @@
                     <navigationItem key="navigationItem" id="PpU-jH-GsK"/>
                     <connections>
                         <outlet property="searchBar" destination="kHa-f7-0V7" id="y5i-XY-lUe"/>
-                        <outlet property="tableView" destination="5T7-gh-Z8O" id="SRk-lL-FWI"/>
+                        <outlet property="tableView" destination="5T7-gh-Z8O" id="Tqu-y4-6Uf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOc-LK-Xqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
