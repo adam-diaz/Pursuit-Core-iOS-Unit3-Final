@@ -21,7 +21,7 @@ class FavCell: UITableViewCell {
         func configureCell(for element: Element) {
             nameLabel.text = element.name
             detailLabel.text = " \(element.symbol)(\(element.number)) \(element.atomicMass)"
-            elementImage.getImage(with: periodicImage(num: element.number)) {  [weak self](result) in
+            elementImage.getImage(with: periodicImage(num: element.number ?? 1)) {  [weak self](result) in
                 switch result {
                 case .failure:
                     DispatchQueue.main.async {

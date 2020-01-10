@@ -41,7 +41,7 @@ class ElementDetailVC: UIViewController {
         boilingLabel.text = "\(elements.boilingPoint ?? 0.0)"
         discoverLabel.text = "\(elements.discoveredBy ?? "unknown")"
         
-        imageView.getImage(with: "http://images-of-elements.com/\(elements.name.lowercased()).jpg") { [weak self] (result) in
+        imageView.getImage(with: "http://images-of-elements.com/\(elements.name!.lowercased()).jpg") { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
@@ -59,7 +59,7 @@ class ElementDetailVC: UIViewController {
    guard let elements = elements else {
        return
    }
-    let fav = Element(id: elements.id, name: elements.name, atomicMass: elements.atomicMass, boilingPoint: elements.boilingPoint, meltingPoint: elements.meltingPoint, discoveredBy: elements.discoveredBy, number: elements.number, symbol: elements.symbol)
+    let fav = Element(id: elements.id, name: elements.name, atomicMass: elements.atomicMass, boilingPoint: elements.boilingPoint, meltingPoint: elements.meltingPoint, discoveredBy: elements.discoveredBy, number: elements.number, symbol: elements.symbol,favoritedBy: "Adán")
     
     ElementsAPIClient.postFavorites(favorite: fav) { [weak self](result) in
         switch result {

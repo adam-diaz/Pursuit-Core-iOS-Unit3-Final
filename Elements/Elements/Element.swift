@@ -10,14 +10,16 @@
 import Foundation
 
 struct Element: Codable {
-    let id: Int?
-    let name: String
-    let atomicMass: Double
+    let id: String?
+    let name: String?
+    let atomicMass: Double?
     let boilingPoint: Double?
     let meltingPoint: Double?
     let discoveredBy: String?
-    let number: Int
-    let symbol: String
+    let number: Int?
+    let symbol: String?
+    let favoritedBy: String?
+    
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -28,5 +30,7 @@ struct Element: Codable {
         case discoveredBy = "discovered_by"
         case number
         case symbol
+        case favoritedBy
+        
     }
 }

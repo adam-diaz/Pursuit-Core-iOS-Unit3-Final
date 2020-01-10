@@ -21,18 +21,20 @@ class FavElementVC: UIViewController {
         }
     }
     
-    var searchQuery = "" {
-        didSet {
-            loadData(for: searchQuery)
-        }
-    }
+//    var searchQuery = "" {
+//        didSet {
+//            loadData(for: searchQuery)
+//        }
+//    }
     
     override func viewDidLoad() {
       super.viewDidLoad()
-      loadData(for: searchQuery)
+//      loadData(for: searchQuery)
       tableView.dataSource = self
       tableView.delegate = self
       searchBar.delegate = self
+      loadData()
+//    elements.sorted { $0.number < $1.number }
     }
 
     
@@ -43,8 +45,8 @@ class FavElementVC: UIViewController {
         elementDetail.elements = elements[indexPath.row]
     }
     
-    private func loadData(for search: String) {
-        ElementsAPIClient.getFavorites() { [weak self](result) in
+    private func loadData() {
+        ElementsAPIClient.getFavorites { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 DispatchQueue.main.async {
@@ -52,11 +54,28 @@ class FavElementVC: UIViewController {
                 }
             case .success(let elements):
                 DispatchQueue.main.async {
-                    self?.elements = elements.sorted { $0.number < $1.number }
+                    self?.elements = elements
+                    dump(elements)
                 }
             }
         }
     }
+    
+//    private func loadData(for search: String) {
+//        ElementsAPIClient.getFavorites() { [weak self](result) in
+//            switch result {
+//            case .failure(let appError):
+//                DispatchQueue.main.async {
+//                    self?.showAlert(title: "App Error", message: "\(appError)")
+//                }
+//            case .success(let elements):
+//                DispatchQueue.main.async {
+//                    self?.elements = [elements]
+//
+//                }
+//            }
+//        }
+//    }
     
 }
 
@@ -66,7 +85,7 @@ extension FavElementVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as? ElementCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as? FavCell else {
             fatalError("Issue with cell connection.")
         }
         
@@ -94,6 +113,6 @@ extension FavElementVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchQuery = searchText
+//        searchQuery = searchText
     }
 }

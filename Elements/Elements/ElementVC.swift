@@ -44,6 +44,8 @@ class ElementVC: UIViewController {
         elementDetail.elements = elements[indexPath.row]
     }
     
+
+    
     private func loadData(for search: String) {
         ElementsAPIClient.fetchElements(for: search) { [weak self](result) in
             switch result {
@@ -53,7 +55,7 @@ class ElementVC: UIViewController {
                 }
             case .success(let elements):
                 DispatchQueue.main.async {
-                    self?.elements = elements.sorted { $0.number < $1.number }
+                    self?.elements = elements
                 }
             }
         }

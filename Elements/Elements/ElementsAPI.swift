@@ -12,7 +12,6 @@ struct ElementsAPIClient {
     
     static func fetchElements(for search: String, completion: @escaping (Result<[Element], AppError>) -> () ) {
         
-//        let searchQuery = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "elements"
         
         let elementEndpointURLString = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/elements"
         
@@ -50,6 +49,7 @@ struct ElementsAPIClient {
             return
         }
         
+        
         do {
         
         let data = try JSONEncoder().encode(favorite)
@@ -79,7 +79,7 @@ struct ElementsAPIClient {
         
     }
     
-    static func getFavorites(completion:@escaping (Result<Element,AppError>) -> () ) {
+    static func getFavorites(completion:@escaping (Result<[Element],AppError>) -> () ) {
         
         let favEndpointUrl = "http://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/favorites"
         guard let url = URL(string: favEndpointUrl) else {
@@ -95,7 +95,7 @@ struct ElementsAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let favorites = try JSONDecoder().decode(Element.self, from: data)
+                    let favorites = try JSONDecoder().decode([Element].self, from: data)
                     completion(.success(favorites))
                 } catch {
                     completion(.failure(.decodingError(error)))
